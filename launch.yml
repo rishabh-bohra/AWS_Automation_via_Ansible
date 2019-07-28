@@ -1,0 +1,5 @@
+- hosts: localhost
+  roles:
+#  - role1_name
+#  - role2_name
+#  - role3_name
