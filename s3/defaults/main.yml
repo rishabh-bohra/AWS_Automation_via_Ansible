@@ -1,0 +1,7 @@
+---
+# defaults file for s3
+#
+bucket_name: rishabh-storage-1
+mode: create
+permission: private
+region: us-east-1

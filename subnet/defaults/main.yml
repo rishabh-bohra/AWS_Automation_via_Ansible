@@ -1,0 +1,14 @@
+---
+# defaults file for subnet
+#
+region: us-east-1
+state: present
+
+subnets:
+  - cidr: 10.0.1.0/24
+    zone: a
+  - cidr: 10.0.2.0/24
+    zone: b
+  - cidr: 10.0.3.0/24
+    zone: c
+

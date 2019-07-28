@@ -1,0 +1,10 @@
+---
+# tasks file for internet_gateway
+#
+- name: ensure igw exists
+  ec2_vpc_igw:
+    vpc_id: "{{ vpc_results.vpc.id }}"
+    region: "{{ region }}"
+    state:  "{{ state }}"
+  register: vpc_igw
+

@@ -1,0 +1,16 @@
+---
+# tasks file for route-table
+#
+- name: create public route table
+  ec2_vpc_route_table:
+    vpc_id: "{{ vpc_results.vpc.id }}"
+    region: "{{ region }}"
+    tags:
+      Name: Public
+    subnets: "{{ subnet_results.results | json_query('[].subnet.id') }}"
+    routes:
+      - dest: 0.0.0.0/0
+        gateway_id: "{{ vpc_igw.gateway_id }}"
+    state:  "{{ state }}"
+
+                         

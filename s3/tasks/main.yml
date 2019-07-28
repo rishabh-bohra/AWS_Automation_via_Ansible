@@ -1,0 +1,10 @@
+---
+# tasks file for s3
+#
+
+- name: Create an empty bucket
+  aws_s3:
+    bucket: "{{ bucket_name }}"
+    mode: "{{ mode }}"
+    permission: "{{ permission }}"
+    region: "{{ region }}"

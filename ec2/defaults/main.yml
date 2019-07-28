@@ -1,0 +1,19 @@
+---
+# defaults file for ec2
+#
+instance_type: t2.micro
+image: ami-0c322300a1dd5dc79
+key_name: rishabh-key
+region_name: us-east-1
+public_ip: no
+count: 1
+ebs_optimized: no
+security_group_name: default
+instance_stop_behavior: stop
+monitoring: no
+state: present
+termination_protection: no
+zone: us-east-1a
+# device_name:
+# volume_size:
+

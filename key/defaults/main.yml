@@ -1,0 +1,12 @@
+---
+# defaults file for key 
+key_name: rishabh-key
+region: us-east-1
+destination: "./rishabh-key.pem"
+state: present
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         
+                  

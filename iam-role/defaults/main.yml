@@ -1,0 +1,12 @@
+---
+# defaults file for iam-role
+#Write the role arn which you want to add in "policy_arn" field
+
+cluster_role_name: rishabh-role
+policy_arn1: arn:aws:iam::aws:policy/AmazonEKSServicePolicy
+policy_arn2: arn:aws:iam::aws:policy/AmazonEKSClusterPolicy
+state: present
+~                                                         
+~                                                         
+~                                                         
+~                          

@@ -1,0 +1,10 @@
+---
+# tasks file for vpc
+#
+- name: ensure VPC exists
+  ec2_vpc_net:
+    name: "{{ vpc_name }}"
+    cidr_block: "{{ vpc_cidr }}"
+    region: "{{ region }}"
+    state:  "{{ state }}"
+  register: vpc_results

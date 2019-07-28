@@ -1,0 +1,13 @@
+---
+# tasks file for iam-role
+#
+- name: create iam role for aws 
+  iam_role:
+      name: "{{ cluster_role_name }}"
+      assume_role_policy_document: "{{ lookup('file','policy.json') }}"
+      managed_policy:
+       - "{{ policy_arn1 }}"
+       - "{{ policy_arn2 }}"
+      state: "{{ state }}"
+  register: cluster_iam_role
+

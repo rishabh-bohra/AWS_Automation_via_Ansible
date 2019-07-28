@@ -1,0 +1,16 @@
+---
+# tasks file for subnet
+#
+- name: ensure subnets exists
+  ec2_vpc_subnet:
+    state:  "{{ state }}"
+    vpc_id: "{{ vpc_results.vpc.id }}"
+    az: "{{ region}}{{ item.zone }}"
+    cidr: "{{ item.cidr }}"
+    tags:
+      Name: "subnet-{{ item.zone }}"
+    purge_tags: no
+    region: "{{ region }}"
+  register: subnet_results
+  loop: "{{ subnets }}"
+

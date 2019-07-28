@@ -1,0 +1,25 @@
+---
+# tasks file for ec2
+#
+
+- name: Launching ec2 instance with ec2 module
+    ec2:
+        instance_type: "{{ instance_type }}" #example for instance type "t2.micro"
+        image: "{{ image }}" # example for image name "ami-5b673c34" for redhat 
+        key_name: "{{ key_name }}" # enter your ec2 instance key name which u generally use to ssh to ec2
+        region: "{{ region_name }}" # example for region name is " ap-south-1 "
+        assign_public_ip: "{{ public_ip }}"
+        count: "{{ count }}"
+        ebs_optimized: "{{ ebs_optimized }}"
+        group: "{{ security_group_name }}"
+        instance_initiated_shutdown_behavior: "{{ instance_stop_behavior }}"
+        monitoring: "{{ monitoring }}"
+        network_interface: "{{ network_interface }}" # remvoe this comment to use an existing network_interface
+        state: "{{ state }}"
+        termination_protection: "{{ termination_protection }}"
+        #vpc_subnet_id: "{{ vpc_subnet_id }}" #uncomment it to use vpc other than default
+        zone: "{{ zone }}"
+        #volumes:
+        #- device_name: /dev/sdb
+        #   volume_size: 10 
+        #

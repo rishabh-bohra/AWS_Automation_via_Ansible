@@ -1,0 +1,6 @@
+---
+# defaults file for internet_gateway
+#
+region: us-east-1
+state: present
+

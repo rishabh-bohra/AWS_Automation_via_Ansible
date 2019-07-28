@@ -1,0 +1,23 @@
+---
+# tasks file for auto_scaling_group
+#
+- name: create launch config
+  ec2_lc:
+    name: "{{ name_lc }}"
+    image_id: "{{ image }}"
+    key_name: "{{ key }}"
+    region: "{{ region }}"
+    security_groups: "{{ security_group }}"
+    instance_type: "{{ instance_type }}"
+    assign_public_ip: "{{ assign_public_ip }}"
+
+- ec2_asg:
+    name: "{{ name_asg }}"
+    launch_config_name: "{{ launch_config_name }}"
+    health_check_period: "{{ health_check_period }}"
+    health_check_type: "{{ health_check_type }}"
+    replace_all_instances: "{{ replace_all_instances }}"
+    min_size: "{{ min_size }}"
+    max_size: "{{  max_size }}"
+    desired_capacity: "{{ desired_capacity }}"
+    region: "{{ region }}"
